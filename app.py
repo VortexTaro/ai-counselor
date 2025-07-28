@@ -152,11 +152,8 @@ def main():
 if __name__ == "__main__":
     # APIキーの確認
     if not config.GEMINI_API_KEY:
-        st.error("GEMINI_API_KEYが設定されていません。.streamlit/secrets.tomlファイルに設定してください。")
-        st.code("""
-# .streamlit/secrets.toml
-GEMINI_API_KEY = "your-api-key-here"
-        """)
+        st.error("Gemini APIキーが設定されていません。")
+        st.info("ローカル環境の場合は .env ファイルに、Streamlit Cloudにデプロイした場合はSecretsにAPIキーを設定してください。")
         st.stop()
     
     main()

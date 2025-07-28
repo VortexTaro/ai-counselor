@@ -2,12 +2,18 @@
 AIカウンセラーBOTの設定ファイル
 """
 import os
+import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# API設定
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+# API設定 (Streamlit CloudのSecretsとローカルの.envファイルの両方に対応)
+if 'GEMINI_API_KEY' in st.secrets:
+    # Streamlit CloudのSecretsからAPIキーを取得
+    GEMINI_API_KEY = st.secrets['GEMINI_API_KEY']
+else:
+    # ローカルの.envファイルからAPIキーを取得
+    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
 # モデル設定
 MODEL_NAME = 'gemini-1.5-pro'
