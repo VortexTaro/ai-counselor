@@ -1,0 +1,13 @@
+[theme]
+primaryColor = "#5B8C5A"  # 落ち着いた緑色
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F5F5"
+textColor = "#262730"
+font = "sans serif"
+
+[server]
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
